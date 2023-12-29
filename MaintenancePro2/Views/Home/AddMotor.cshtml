@@ -1,0 +1,44 @@
+﻿@model Motor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Maintenance Pro</title>
+</head>
+<body>
+    <div>
+        <form asp-action="NewVic">
+            <h1>Add Your Dirt Bike</h1>
+            <div>
+                <span asp-validation-for="year"></span>
+                <label asp-for="year"></label>
+                <select asp-for="year">
+                    @for(int i = 2000; i<=2022; i++)
+                    {
+                        <option value = "@i">@i</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <span asp-validation-for="make"></span>
+                <label asp-for="make"></label>
+                <input asp-for="make">
+            </div>
+            <div>
+                <span asp-validation-for="model"></span>
+                <label asp-for="model"></label>
+                <input asp-for="model">
+            </div>
+            <div>
+                <span asp-validation-for="hours"></span>
+                <label asp-for="hours"></label>
+                <input asp-for="hours">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

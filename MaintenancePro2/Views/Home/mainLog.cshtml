@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Power Log</title>
+</head>
+<body>
+    <div id="container">
+        <div id="navBar">
+            <a class="nav" href="/">My Bikes</a>
+            <a class="nav" href="/newMotor">Add Bike</a>
+        </div>
+        <table>
+            <thead>
+                <tr class="topCol">Maintenance Item</tr>
+                <tr class="topCol">Hours Performed</tr>
+                <tr class="topCol">Date Performed</tr>
+            </thead>
+            <tbody>
+                @foreach (PreformedItem pItem in Model.AllPerformedItems)
+                {
+                    <tr class="row">
+                        <td class="col">@pItem.Item.action @pItem.Item.item</td>
+                        <td class="col">@pItem.hpa</td>
+                        <td class="col">@pItem.dpa</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

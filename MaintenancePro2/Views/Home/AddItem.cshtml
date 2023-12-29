@@ -1,0 +1,58 @@
+@using MaintenancePro2.Models
+@model MaintenanceItem;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Pro</title>
+</head>
+<body>
+    <div id="container">
+        @foreach (Motor motor in Model.MotorList)
+        {
+            <h1>Add Maintenance Item for @motor.year @motor.make @motor.model</h1>
+        }
+        <div id="navBar">
+            <a class="nav" href="/">My Bikes</a>
+        </div>
+        <form asp-action="NewItem">
+            <div>
+                @foreach (Motor motor in Model.MotorList)
+                {
+                    <input asp-for="MotorID" type="hidden" value="@motor.motorID">
+                }
+            </div>
+            <div>
+                <span asp-validation-for="item"></span>
+                <label asp-for="item"></label>
+                <input asp-for="item">
+            </div>
+            <div>
+                <label asp-for="note"></label>
+                <textarea asp-for="note" placeholder="optional" cols="15" rows="1"></textarea>
+            </div>
+            <div>
+                <span asp-validation-for="interval"></span>
+                <label asp-for="interval"></label>
+                <input asp-for="interval">
+            </div>
+            <div>
+                <span asp-validation-for="action"></span>
+                <label asp-for="action"></label>
+                <select asp-for="action">
+                    <option value="Inspect">Inspect</option>
+                    <option value="Clean">Clean</option>
+                    <option value="Replace">Replace</option>
+                    <option value="Adjust">Adjust</option>
+                    <option value="Lubricate">Lubricate</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Add Item">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@using MaintenancePro2.Models
+@model IndexView;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Power Log</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Maintenance Schedule</h1>
+        <div id="navBar">
+            <a class="nav" href="/">My Bikes</a>
+            <a class="nav" href="/addItem/@Model.AMotorID">Add Maintenance Item</a>
+            <a class="nav" href="/newMotor">Add Bike</a>
+        </div>
+        <table>
+            <thead>
+                <tr class="topRow">
+                    <th class="topCol">Item</th>
+                    <th class="topCol">Note</th>
+                    <th class="topCol">Interval</th>
+                    <th class="topCol">Action</th>
+                    <th class="topCol">Performed</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(MaintenanceItem Item in Model.AllItems)
+                {
+                    @if(Model.AMotorID == Item.MotorID)
+                    {
+                    <tr class="row">
+                        <td class="col">@Item.item</td>
+                        <td class="col">@Item.note</td>
+                        <td class="col">@Item.interval</td>
+                        <td class="col">@Item.action</td>
+                        <td class="col">
+                            <button><a href="/logItem/@Item.itemID/@Item.MotorID">Log Item</a></button>
+                        </td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

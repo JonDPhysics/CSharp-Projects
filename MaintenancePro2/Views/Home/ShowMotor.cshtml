@@ -1,0 +1,48 @@
+﻿@using MaintenancePro2.Models;
+@model IndexView;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Maintenance Pro</title>
+</head>
+<body>
+    <div id="container">
+        <div id="navBar">
+            <h1>Your Dirt Bikes</h1>
+            <a class="nav" href="/newMotor">Add Bike</a>
+        </div>
+        <table>
+            <thead>
+                <tr class="topRow">
+                    <th class="topCol">Year</th>
+                    <th class="topCol">Make</th>
+                    <th class="topCol">Model</th>
+                    <th class="topCol">Hours</th>
+                    <th class="topCol">Maintenance</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(Motor motor in Model.AllMotors)
+                {
+                    <form asp-action="ThisMotor">
+                        <tr class="row">
+                            <td class="col">@motor.year</td>
+                            <td class="col">@motor.make</td>
+                            <td class="col">@motor.model</td>
+                            <td class="col">@motor.hours</td>
+                            <td class="col">
+                                <button><a href="Schedule/@motor.motorID">Schedule</a></button>
+                            </td>
+                        </tr> 
+                    </form>
+                }
+        </tbody>
+    </table>
+        <div>
+    </div>
+</body>
+</html>

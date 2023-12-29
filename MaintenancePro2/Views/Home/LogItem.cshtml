@@ -1,0 +1,56 @@
+@using MaintenancePro2.Models;
+@model PreformedItem;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Power Log</title>
+</head>
+<body>
+    <div id="container">
+        @foreach (MaintenanceItem item in Model.ItemList)
+        {
+            <h1>Add '@item.action @item.item'  to Maintenance Log</h1>
+        }
+        <div id="navBar">
+            <a class="nav" href="/">My Bikes</a>
+            <a class="nav" href="/newMotor">Add Bike</a>
+        </div>
+        <form asp-action="NewlyPreformed">
+            <div>
+                <span asp-validation-for="hpa"></span>
+                <label asp-for="hpa"></label>
+                <select asp-for="hpa">
+                    @for(double i = 0.0; i<=500.9; i += 0.1)
+                    {
+                        <option value="@Math.Round(i,1)">@Math.Round(i,1)</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <span asp-validations-for="dpa"></span>
+                <label asp-for="dpa"></label>
+                <input type="date" asp-for="dpa" value="mm/dd/yyyy">
+            </div>
+            <div>
+                @foreach (MaintenanceItem item in Model.ItemList)
+                {
+                    <input asp-for="ItemID" type="hidden" value="@item.itemID">
+                }
+            </div>
+            <div>
+                @foreach (Motor motor in Model.MotorList)
+                {
+                    <input asp-for="MotorID" type="hidden" value="@motor.motorID">
+                }
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
