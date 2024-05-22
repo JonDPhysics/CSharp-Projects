@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qqJ2Rp2lQXej7kRPbs9IR1neyVwZgXHNJCJbuKgz0I3BwZOnmNJ+pNgIJE38PxmJrn5KmCHV088AyPGdwI1Tdg==",
+  "dgSpecHash": "D4UYPqew5O4AeZ7NqeH7Qr7geti68micLE893Na1N7zxX51IK2ibfX86MPeGEp93DLGtUazJ6YResBDKckwRcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonat\\OneDrive\\Documents\\MyProjects\\Science-Sophistry-1\\CSharp\\MaintenancePro2\\MaintenancePro2.csproj",
+  "projectFilePath": "C:\\Users\\jonat\\Documents\\Projects\\CSharp-Projects\\MaintenancePro2\\MaintenancePro2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
@@ -29,9 +29,7 @@
     "C:\\Users\\jonat\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\jonat\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.28\\microsoft.netcore.app.host.win-x64.3.1.28.nupkg.sha512"
+    "C:\\Users\\jonat\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }
